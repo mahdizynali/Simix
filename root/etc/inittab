@@ -1,0 +1,8 @@
+::sysinit:clear
+::sysinit:cat /etc/logo.txt
+::restart:/sbin/init
+::shutdown:sync
+::shutdown:unmount -a
+:::ctrlaltdel:/sbin/reboot
+::respawn:/bin/cttyhack /etc/shell.sh
+

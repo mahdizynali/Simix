@@ -1,0 +1,11 @@
+#!/bin/sh
+
+dmesg -n 1
+clear
+
+mount -t proc none /proc
+mount -t sysfs none /sys
+mount -t devtmpfs none /dev
+
+# exec /bin/sh
+exec sbin/init

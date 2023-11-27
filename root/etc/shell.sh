@@ -1,0 +1,1 @@
+ENVVAR=test /bin/sh
