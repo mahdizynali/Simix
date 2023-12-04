@@ -7,5 +7,15 @@ mount -t proc none /proc
 mount -t sysfs none /sys
 mount -t devtmpfs none /dev
 
-# exec /bin/sh
+# Create user 'mahdi' and set the password
+mkdir -p /home/mahdi
+echo "mahdi:x:1000:1000:Mahdi,,,:/home/mahdi:/bin/sh" >> /etc/passwd
+echo "mahdi:x:1000:" >> /etc/group
+echo "mahdi:mahdi" | chpasswd
+
+echo "mahdi" > /etc/hostname
+
+echo "mahdi ALL=(ALL:ALL) ALL" >> /etc/sudoers
+
 exec sbin/init
+# exec bin/sh
